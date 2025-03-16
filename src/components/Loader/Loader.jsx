@@ -1,5 +1,5 @@
 import React from "react";
-import { RiseLoader } from "react-spinners/RiseLoader";
+import RiseLoader from "react-spinners/RiseLoader";
 import styles from "./Loader.module.css";
 
 export default function Loader() {

@@ -5,7 +5,7 @@ import Loader from "../Loader/Loader";
 import ErrorMessage from "../ErrorMessage/ErrorMessage";
 import LoadMoreBtn from "../LoadMoreBtn/LoadMoreBtn";
 import ImageModal from "../ImageModal/ImageModal";
-import { toast } from "react-hot-toast";
+import toast, { Toaster } from "react-hot-toast";
 import axios from "axios";
 import styles from "./App.module.css";
 
@@ -17,7 +17,6 @@ export default function App() {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
   const [page, setPage] = useState(1);
-  const [showModal, setShowModal] = useState(false);
   const [modalImage, setModalImage] = useState(null);
 
   useEffect(() => {
@@ -59,15 +58,13 @@ export default function App() {
     setPage((prevPage) => prevPage + 1);
   };
 
-  const openModal = (image) => {
+  function openModal(image) {
     setModalImage(image);
-    setShowModal(true);
-  };
+  }
 
-  const closeModal = () => {
-    setShowModal(false);
+  function closeModal() {
     setModalImage(null);
-  };
+  }
 
   return (
     <div className={styles.app}>
@@ -80,9 +77,8 @@ export default function App() {
       {images.length > 0 && !isLoading && (
         <LoadMoreBtn onLoadMore={handleLoadMore} />
       )}
-      {showModal && modalImage && (
-        <ImageModal image={modalImage} onClose={closeModal} />
-      )}
+      <ImageModal image={modalImage} onClose={closeModal} />
+      <Toaster />
     </div>
   );
 }
