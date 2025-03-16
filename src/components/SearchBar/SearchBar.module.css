@@ -1,0 +1,32 @@
+.header {
+  background-color: #bed3d7;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+}
+
+.input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 10px;
+  width: 300px;
+  box-shadow: 0 0 20px #56a0af, 0 0 40px #1f7a8c;
+  animation: glow-border 1.5s infinite alternate;
+}
+
+.button {
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: 0 0 20px #56a0af, 0 0 40px #1f7a8c;
+  animation: glow-border 1.5s infinite alternate;
+}
