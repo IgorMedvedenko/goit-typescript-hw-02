@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import styles from "./SearchBar.module.css";
+import { SearchBarProps } from "../App/App.types";
 
-export default function SearchBar({ onSubmit }) {
+const SearchBar: React.FC<SearchBarProps> = ({ onSubmit }) => {
   const [query, setQuery] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     onSubmit(query);
     setQuery("");
@@ -28,4 +29,5 @@ export default function SearchBar({ onSubmit }) {
       </form>
     </header>
   );
-}
+};
+export default SearchBar;

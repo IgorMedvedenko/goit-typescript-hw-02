@@ -1,9 +1,10 @@
 import React from "react";
 import styles from "./ImageCard.module.css";
+import { ImageCardProps } from "../App/App.types";
 
-export default function ImageCard({ image, onClick }) {
+const ImageCard: React.FC<ImageCardProps> = ({ image, onClick }) => {
   return (
-    <div onClick={onClick} className={styles.card}>
+    <div onClick={() => onClick(image)} className={styles.card}>
       <img
         src={image.urls.small}
         alt={image.alt_description}
@@ -11,4 +12,5 @@ export default function ImageCard({ image, onClick }) {
       />
     </div>
   );
-}
+};
+export default ImageCard;

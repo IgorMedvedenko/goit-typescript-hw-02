@@ -1,10 +1,10 @@
 import React from "react";
 import Modal from "react-modal";
 import styles from "./ImageModal.module.css";
+import { ImageModalProps } from "../App/App.types";
 
 Modal.setAppElement("#modal-root");
-
-export default function ImageModal({ image, onClose }) {
+const ImageModal: React.FC<ImageModalProps> = ({ image, onClose }) => {
   const isOpen = Boolean(image);
   return (
     <Modal
@@ -30,4 +30,6 @@ export default function ImageModal({ image, onClose }) {
       </button>
     </Modal>
   );
-}
+};
+
+export default ImageModal;
